@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Container, ListGroup, ListGroupItem } from 'reactstrap';
+import AddMessage from './AddMessage';
 import Message from './Message';
+
 
 export default class MesssageList extends Component {
 
@@ -22,9 +24,18 @@ state = {
         this.setState({messages:message});
     }
 
+    addMessage = (message) => {
+      message.id = Math.random();
+      let messages = [...this.state.messages, message]
+      this.setState({
+        messages: messages
+      });
+    }
+
   render() {
     return (
     <Container className="container">
+
       <ListGroup className="message-list">
         {this.state.messages.map((msg) => 
         <ListGroupItem className="justify-content-between">
@@ -32,6 +43,8 @@ state = {
         </ListGroupItem>            
         )}
       </ListGroup>
+
+      <AddMessage className="addMessage" addMessage={this.addMessage} />
     </Container>
     )
   } // end render
