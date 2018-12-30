@@ -20,6 +20,7 @@ export class AddMessage extends Component {
         this.props.addMessage(this.state);
         this.setState({
             title: '',
+            text: '',
             status: ''
         })
     }
@@ -34,6 +35,17 @@ export class AddMessage extends Component {
             name="title" 
             id="title" 
             value={this.state.title} 
+            onChange={this.handleChange}
+          />
+        </FormGroup>
+
+        <FormGroup>
+          <Label for="title">Text</Label>
+          <Input 
+            type="text" 
+            name="title" 
+            id="text" 
+            value={this.state.text} 
             onChange={this.handleChange}
           />
         </FormGroup>
