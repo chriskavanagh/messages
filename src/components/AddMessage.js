@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
 
 export class AddMessage extends Component {
@@ -9,14 +9,19 @@ export class AddMessage extends Component {
     }
 
     handleChange = (e) => {
+        //let { id } = e.target;
         this.setState({
-            [e.target.id]: e.target.value
+            [e.target.id]: e.target.value,
         })
     }
 
     handleSubmit = (e) => {
         e.preventDefault();
         this.props.addMessage(this.state);
+        this.setState({
+            title: '',
+            status: ''
+        })
     }
 
   render() {
