@@ -25,9 +25,20 @@ export class AddMessage extends Component {
         })
     }
 
+    h2Style = {
+      color: "rgb(196, 196, 0)",
+      marginTop: "12rem"
+    }
+    formStyle = {
+      margin: "5rem 0 5rem 17rem",
+      width: "50%"
+    }
+
   render() {
     return (
-      <Form className="form" onSubmit={this.handleSubmit}>
+      <div>
+      <h2 style={this.h2Style}>Add A Message</h2>
+      <Form style={this.formStyle} onSubmit={this.handleSubmit}>
         <FormGroup>
           <Label for="title">Title</Label>
           <Input 
@@ -62,6 +73,7 @@ export class AddMessage extends Component {
         </FormGroup>
         <Button color="primary" size="lg" block>Submit</Button>
       </Form>
+      </div>
     )
   }
 }
