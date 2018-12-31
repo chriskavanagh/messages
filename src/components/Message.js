@@ -36,5 +36,5 @@ class Message extends Component {
 
 } // end class
 
-const WrappedComponent = withSecretToLife(Message)
-export default WrappedComponent;
+
+export default withSecretToLife(Message)
