@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input, } from 'reactstrap';
 
 
 export class AddMessage extends Component {
@@ -26,12 +26,15 @@ export class AddMessage extends Component {
     }
 
     h2Style = {
-      color: "rgb(196, 196, 0)",
+      color: "#DAA520",
       marginTop: "12rem"
     }
+
     formStyle = {
-      margin: "5rem 0 5rem 17rem",
-      width: "50%"
+      margin: "5rem 0 15rem 17rem",
+      width: "50%",
+      border: "2px solid #C0C0C0",
+      padding: "60px 30px 80px 30px"
     }
 
   render() {
@@ -39,6 +42,7 @@ export class AddMessage extends Component {
       <div>
       <h2 style={this.h2Style}>Add A Message</h2>
       <Form style={this.formStyle} onSubmit={this.handleSubmit}>
+      
         <FormGroup>
           <Label for="title">Title</Label>
           <Input 
@@ -49,7 +53,7 @@ export class AddMessage extends Component {
             onChange={this.handleChange}
           />
         </FormGroup>
-
+        
         <FormGroup>
           <Label for="title">Text</Label>
           <Input 

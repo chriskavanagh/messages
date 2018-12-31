@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import withSecretToLife from './HOC/SecretHoc';
 import { Button } from 'reactstrap';
 
 
-export default class Message extends Component {
+class Message extends Component {
     state = {
         id: this.props.msg.id,
         title: this.props.msg.title,
@@ -26,6 +27,7 @@ export default class Message extends Component {
           <div className={ status + ' message-box' }>
             <div className={ triangleClass }></div>
             <h2 className={ muted }>{ title }</h2>
+            <h3>{this.props.secretToLife}</h3>
             <p className={ muted }>{ text }</p>
             <p><Button color="warning" onClick={this.toggle}>{ label }</Button></p>
           </div>
@@ -33,3 +35,6 @@ export default class Message extends Component {
       }
 
 } // end class
+
+const WrappedComponent = withSecretToLife(Message)
+export default WrappedComponent;

@@ -5,7 +5,8 @@
 .triangle-topright {
   width: 0;
   height: 0;
-  border-top: 100px solid #FFFF00;
+  border-top: 100px solid #DAA520;
+  font-weight: 900;
   border-left: 100px solid transparent;
   position: absolute;
   top:0;
