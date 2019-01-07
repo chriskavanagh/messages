@@ -4,6 +4,7 @@ import { Button } from 'reactstrap';
 
 
 class Message extends Component {
+    
     state = {
         id: this.props.msg.id,
         title: this.props.msg.title,
@@ -19,17 +20,20 @@ class Message extends Component {
     }
 
     render() {
+        const { secretToLife } = this.props;
         const { status, title, text } = this.props.msg;
+
         let label = (this.state.status === 'not-read') ? 'Mark As Read':'Mark As Unread';
         let triangleClass = (this.state.status === 'not-read') ? "triangle-topright":"none"
         let muted = (this.state.status === 'not-read') ? "none":"muted";
+
         return (
           <div className={ status + ' message-box' }>
             <div className={ triangleClass }></div>
             <h2 className={ muted }>{ title }</h2>
-            <h3>{this.props.secretToLife}</h3>
+            <h3>{ secretToLife }</h3>
             <p className={ muted }>{ text }</p>
-            <p><Button color="warning" onClick={this.toggle}>{ label }</Button></p>
+            <p><Button outline color="warning" onClick={this.toggle}>{ label }</Button></p>
           </div>
         )
       }
@@ -37,4 +41,4 @@ class Message extends Component {
 } // end class
 
 
-export default withSecretToLife(Message)
+export default withSecretToLife(Message);

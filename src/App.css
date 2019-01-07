@@ -22,3 +22,7 @@
   opacity: 0.5;
 }
 
+label {
+  color:#191970;
+  /* font-weight: bold; */
+}

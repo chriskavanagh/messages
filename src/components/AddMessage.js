@@ -1,17 +1,20 @@
 import React, { Component } from 'react';
 import { Button, Form, FormGroup, Label, Input, } from 'reactstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 export class AddMessage extends Component {
     state = {
         title: '',
+        text: '',
         status: ''
     }
 
     handleChange = (e) => {
-        //let { id } = e.target;
+        const { id, value } = e.target;
         this.setState({
-            [e.target.id]: e.target.value,
+            [id]: value
+            //[e.target.id]: e.target.value,
         })
     }
 
@@ -26,15 +29,20 @@ export class AddMessage extends Component {
     }
 
     h2Style = {
-      color: "#DAA520",
+      color: "#191970",
       marginTop: "12rem"
     }
 
     formStyle = {
       margin: "5rem 0 15rem 17rem",
       width: "50%",
-      border: "2px solid #C0C0C0",
+      border: "2px solid #B8860B",
+      borderRadius: "15px",
       padding: "60px 30px 80px 30px"
+    }
+
+    iconStyle = {      
+      marginRight: "5px"
     }
 
   render() {
@@ -44,7 +52,10 @@ export class AddMessage extends Component {
       <Form style={this.formStyle} onSubmit={this.handleSubmit}>
       
         <FormGroup>
-          <Label for="title">Title</Label>
+          <Label for="title">
+            <FontAwesomeIcon style={this.iconStyle} icon="edit" />            
+            Title
+          </Label>
           <Input 
             type="text" 
             name="title" 
@@ -55,6 +66,7 @@ export class AddMessage extends Component {
         </FormGroup>
         
         <FormGroup>
+        <FontAwesomeIcon style={this.iconStyle} icon="file" />
           <Label for="title">Text</Label>
           <Input 
             type="text" 
@@ -66,6 +78,7 @@ export class AddMessage extends Component {
         </FormGroup>
 
         <FormGroup>
+        <FontAwesomeIcon style={this.iconStyle} icon="keyboard" />
           <Label for="status">Status</Label>
           <Input 
             type="text" 
@@ -75,11 +88,11 @@ export class AddMessage extends Component {
             onChange={this.handleChange}
           />
         </FormGroup>
-        <Button color="primary" size="lg" block>Submit</Button>
+        <Button outline color="warning" size="lg" block>Submit</Button>
       </Form>
       </div>
     )
   }
-}
+} // end class
 
 export default AddMessage;
