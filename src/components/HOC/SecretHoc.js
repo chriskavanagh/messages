@@ -6,7 +6,7 @@ const withSecretToLife = (WrappedComponent) => {
      
         render() {
           return (
-            <WrappedComponent {...this.props} secretToLife={48} />
+            <WrappedComponent {...this.props} secretToLife={"I'm from HOC"} />
           )
         }
       }
