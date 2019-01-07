@@ -21,6 +21,7 @@ export class AddMessage extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
         this.props.addMessage(this.state);
+        // reset state
         this.setState({
             title: '',
             text: '',
